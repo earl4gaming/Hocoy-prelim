@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites</title>
+    <link rel="stylesheet" href="favorites.css">
+</head>
+<body>
+
+    <header>
+        <h1>My Favorites</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="subjects.html">Subjects Taken</a></li>
+            <li><a href="enrolled.html">Currently Enrolled</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="favorites.html" class="active">My Favorites</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="pics/video.jpg" alt="Video Editing">
+                    <p class="description">I enjoy creating and editing videos, bringing stories to life through visuals.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/music.jpg" alt="Music">
+                    <p class="description">Listening to music helps me relax and boosts my creativity.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/read.jpg" alt="Reading">
+                    <p class="description">Reading books expands my knowledge and imagination.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/playing.jpg" alt="Playing Games">
+                    <p class="description">Gaming is my way of unwinding and testing my skills.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/workout.jpg" alt="Workout">
+                    <p class="description">Staying fit and working out keeps me energized and healthy.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/travel.jpg" alt="Travel">
+                    <p class="description">I love exploring new places and experiencing different cultures.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/photograph.jpg" alt="Photography">
+                    <p class="description">Capturing moments through photography is my passion.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/coding.jpg" alt="Coding">
+                    <p class="description">I enjoy coding and building software projects.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/movies.jpg" alt="Movies">
+                    <p class="description">Watching movies is my escape into different worlds.</p>
+                </div>
+                <div class="carousel-slide">
+                    <img src="pics/cooking.jpg" alt="Cooking">
+                    <p class="description">Cooking allows me to experiment with flavors and enjoy good food.</p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ITP4 | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function moveSlide(direction) {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

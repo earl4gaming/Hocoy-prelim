@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gallery</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="subjects.html">Subjects Taken</a></li>
+            <li><a href="enrolled.html">Currently Enrolled</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="favorites.html">My Favorites</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide"><img src="gal/img1.jpg" alt="Image 1"></div>
+                <div class="carousel-slide"><img src="gal/img2.jpg" alt="Image 2"></div>
+                <div class="carousel-slide"><img src="gal/img3.jpg" alt="Image 3"></div>
+                <div class="carousel-slide"><img src="gal/img4.jpg" alt="Image 4"></div>
+                <div class="carousel-slide"><img src="gal/img5.jpg" alt="Image 5"></div>
+                <div class="carousel-slide"><img src="gal/img6.jpg" alt="Image 6"></div>
+                <div class="carousel-slide"><img src="gal/img7.jpg" alt="Image 7"></div>
+                <div class="carousel-slide"><img src="gal/img8.jpg" alt="Image 8"></div>
+                <div class="carousel-slide"><img src="gal/img9.jpg" alt="Image 9"></div>
+                <div class="carousel-slide"><img src="gal/img10.jpg" alt="Image 10"></div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".carousel-slide");
+        const totalSlides = slides.length;
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const container = document.querySelector(".carousel-container");
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            container.style.transform = `translateX(${offset}%)`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 3000); // Auto-slide every 3 seconds
+    </script>
+
+</body>
+</html>

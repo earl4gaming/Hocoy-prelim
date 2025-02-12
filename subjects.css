@@ -1,0 +1,134 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+/* Header */
+header {
+    background: #1f1f1f; /* Darker header */
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation */
+nav {
+    background: #1f1f1f; /* Dark navbar */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0; /* Light text */
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: #444; /* Darker highlight */
+    color: white;
+}
+
+/* Main Container */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #1f1f1f; /* Dark container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #333333; /* Blue header */
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+    background: #2c2c2c;
+}
+
+tbody tr:nth-child(odd) {
+    background: #1f1f1f;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #1976D2; /* Blue buttons */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.page-btn:hover {
+    background: #135ba0;
+}
+
+.page-btn.active {
+    background: #444; /* Darker active button */
+}
+
+/* Hidden Pages */
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 8px rgba(255, 255, 255, 0.1);
+}
