@@ -51,6 +51,7 @@
                     <tr><td>ENGL A ENGA21CS</td><td>GRAMMAR AND SPEECH ENHANCEMENT</td><td>MW</td><td>A205</td><td>3.0</td><td>2.25</td><td>Passed</td><td>GOMEZ, ESELL GRACE M</td></tr>
     
                 </tbody>
+
             </table>
         </section>
 
@@ -80,6 +81,7 @@
                     <tr><td>EP 1S EP1S28CS</td><td>ENGLISH PROFICIENCY - START I</td><td>MW</td><td>HF205</td><td>3.0</td><td>2.00</td><td>Passed</td><td>CODILLA, KELSY JEAN B</td></tr>
     
                 </tbody>
+
             </table>
         </section>
 
@@ -108,14 +110,17 @@
                     <tr><td>SOC ECON 1</td><td>THE CONTEMPORARY WORLD</td><td>TTH</td><td>RC401</td><td>1.50</td><td>3.00</td><td>Passed</td><td>ASIBAL, JONATHAN D</td></tr>
                     <tr><td>PE 3</td><td>PATH FIT 3: SPORTS (INDIVIDUAL/DUAL)</td><td>F</td><td>POOL</td><td>1.00</td><td>2.00</td><td>Passed</td><td>MORENO, HEIDY RUMANDAN</td></tr>
                 </tbody>
+
             </table>
         </section>
 
         <!-- Pagination -->
         <div class="pagination">
+            <button class="prev-btn" onclick="changePage(-1)">&lt;</button>
             <button onclick="showPage(1)" class="page-btn active">1</button>
             <button onclick="showPage(2)" class="page-btn">2</button>
             <button onclick="showPage(3)" class="page-btn">3</button>
+            <button class="next-btn" onclick="changePage(1)">&gt;</button>
         </div>
 
     </main>
@@ -125,6 +130,7 @@
     </footer>
 
     <script>
+        let currentPage = 1;
         function showPage(pageNumber) {
             let pages = document.querySelectorAll('.semester-page');
             let buttons = document.querySelectorAll('.page-btn');
@@ -136,6 +142,15 @@
             buttons.forEach((btn, index) => {
                 btn.classList.toggle('active', index === pageNumber - 1);
             });
+
+            currentPage = pageNumber;
+        }
+
+        function changePage(direction) {
+            let newPage = currentPage + direction;
+            if (newPage >= 1 && newPage <= 3) {
+                showPage(newPage);
+            }
         }
     </script>
 
